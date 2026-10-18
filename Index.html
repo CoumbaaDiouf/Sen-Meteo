@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sen Météo</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="container" id="app">
+    <header>
+      <div class="brand">
+        <div class="logo">⛅</div>
+        <div>Sen Météo</div>
+      </div>
+      <div class="actions">
+        <!-- Formulaire de recherche de ville -->
+        <form id="searchForm" class="search" autocomplete="off">
+          <input id="cityInput" type="text" placeholder="Rechercher une ville… (ex: Dakar)" aria-label="Ville">
+          <button type="submit">Rechercher</button>
+        </form>
+        <!-- Bouton pour utiliser la géolocalisation -->
+        <button id="geoBtn" class="btn" title="Utiliser ma position">📍 Ma position</button>
+      </div>
+    </header>
+
+    <!-- Zone d'affichage des erreurs -->
+    <div id="errorBox" class="error" style="display:none"></div>
+
+    <div class="grid">
+      <!-- Carte météo actuelle et prévisions -->
+      <section class="card" id="currentCard">
+        <div class="current" id="currentContent">
+          <div class="skeleton" style="height:100px; border-radius:12px;"></div>
+        </div>
+
+        <h3>Prévisions sur 5 jours</h3>
+        <div class="forecast" id="forecast">
+          <!-- Prévisions remplacées par JS -->
+        </div>
+      </section>
+
+      <!-- Carte grandes villes -->
+      <aside class="card">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <h3>Grandes villes</h3>
+          <button id="refreshCities" class="btn" title="Actualiser">🔄</button>
+        </div>
+        <div style="height:10px"></div>
+        <div class="cities" id="cities"></div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="Script.js"></script>
+</body>
+</html> 
